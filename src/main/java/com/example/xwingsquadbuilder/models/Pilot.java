@@ -13,37 +13,37 @@ public class Pilot
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    String name;
-    String shipType;
-    String subtitle;
-    Integer init;
+    private Long id;
+    private String name;
+    private String shipType;
+    private String subtitle;
+    private Integer init;
     @Enumerated(EnumType.STRING)
-    Faction faction;
-    Boolean limited;
-    Integer limit;
-    String pilotAbility;
-    String shipAbility;
+    private Faction faction;
+    private Boolean limited;
+    private Integer limit;
+    private String pilotAbility;
+    private String shipAbility;
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "normalActions", joinColumns = @JoinColumn(name = "id"))
-    Set<Action> normalActions;
+    private Set<Action> normalActions;
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "difficultActions", joinColumns = @JoinColumn(name = "id"))
-    Set<Action> difficultActions;
+    private Set<Action> difficultActions;
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "forceActions", joinColumns = @JoinColumn(name = "id"))
-    Set<Action> forceActions;
+    private Set<Action> forceActions;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "linked_actions_id")
-    Set<LinkedActions> linkedActions;
-    Integer cost;
-    Integer attack;
-    Integer evade;
-    Integer hull;
-    Integer shield;
-    Integer forceCapacity;
+    private Set<LinkedActions> linkedActions;
+    private Integer cost;
+    private Integer attack;
+    private Integer evade;
+    private Integer hull;
+    private Integer shield;
+    private Integer forceCapacity;
     @Enumerated(EnumType.STRING)
-    Size size;
+    private Size size;
 
     public Pilot()
     {
