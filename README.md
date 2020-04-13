@@ -1,1 +1,1 @@
-# X-Wing-2nd-Ed.-Squad-Builder
+# X-Wing 2ndEdition Squad Builder
